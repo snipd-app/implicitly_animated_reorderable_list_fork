@@ -76,10 +76,10 @@ class _LanguageSearchPageState extends State<LanguageSearchPage> {
         title: HighlightText(
           query: text,
           text: lang.nativeName,
-          style: textTheme.bodyText2?.copyWith(
+          style: textTheme.bodyMedium?.copyWith(
             fontSize: 16,
           ),
-          activeStyle: textTheme.bodyText2?.copyWith(
+          activeStyle: textTheme.bodyMedium?.copyWith(
             fontSize: 16,
             fontWeight: FontWeight.w900,
           ),
@@ -87,10 +87,10 @@ class _LanguageSearchPageState extends State<LanguageSearchPage> {
         subtitle: HighlightText(
           query: text,
           text: lang.englishName,
-          style: textTheme.bodyText1?.copyWith(
+          style: textTheme.bodyLarge?.copyWith(
             fontSize: 15,
           ),
-          activeStyle: textTheme.bodyText1?.copyWith(
+          activeStyle: textTheme.bodyLarge?.copyWith(
             fontSize: 15,
             fontWeight: FontWeight.bold,
           ),
@@ -162,7 +162,7 @@ class _LanguageSearchPageState extends State<LanguageSearchPage> {
                       autofocus: true,
                       controller: _controller,
                       textInputAction: TextInputAction.search,
-                      style: textTheme.bodyText2?.copyWith(
+                      style: textTheme.bodyMedium?.copyWith(
                         color: Colors.white,
                         fontSize: 18,
                       ),
@@ -171,7 +171,7 @@ class _LanguageSearchPageState extends State<LanguageSearchPage> {
                         contentPadding:
                             const EdgeInsets.symmetric(horizontal: 16),
                         hintText: 'Search for a language',
-                        hintStyle: textTheme.bodyText2?.copyWith(
+                        hintStyle: textTheme.bodyMedium?.copyWith(
                           color: Colors.grey.shade200,
                           fontSize: 16,
                         ),
@@ -199,10 +199,10 @@ class _LanguageSearchPageState extends State<LanguageSearchPage> {
   }
 
   Widget _buildNoLanguagesPlaceholder() {
-    return Center(
+    return const Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        children: const <Widget>[
+        children: <Widget>[
           Icon(
             Icons.translate,
             color: Colors.grey,

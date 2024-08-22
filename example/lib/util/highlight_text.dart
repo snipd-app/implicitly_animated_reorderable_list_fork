@@ -30,7 +30,7 @@ class HighlightText extends StatefulWidget {
 }
 
 class _HighlightTextState extends State<HighlightText> {
-  TextStyle get style => widget.style ?? Theme.of(context).textTheme.bodyText2!;
+  TextStyle get style => widget.style ?? Theme.of(context).textTheme.bodyMedium!;
   TextStyle get activeStyle =>
       widget.activeStyle ?? style.copyWith(fontWeight: FontWeight.bold);
 
@@ -44,7 +44,6 @@ class _HighlightTextState extends State<HighlightText> {
       overflow: widget.overflow,
       softWrap: widget.softWrap,
       textDirection: widget.textDirection,
-      textScaleFactor: widget.textScaleFactor,
       text: TextSpan(
         children: idxs.map((idx) {
           return TextSpan(
@@ -52,7 +51,7 @@ class _HighlightTextState extends State<HighlightText> {
             style: idx.third ? activeStyle : style,
           );
         }).toList(),
-      ),
+      ), textScaler: TextScaler.linear(widget.textScaleFactor),
     );
   }
 }
