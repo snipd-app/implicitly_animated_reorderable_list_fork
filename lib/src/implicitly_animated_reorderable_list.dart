@@ -552,11 +552,16 @@ class ImplicitlyAnimatedReorderableListState<E extends Object>
     _itemTranslations.forEach((key, controller) {
       final item = _itemBoxes[key];
 
-      if (item != dragItem && item != target) {
-        if (item!.index! < target!.index!) {
-          controller.reverse();
-        } else {
-          controller.forward();
+      if (item != dragItem && item != target && item != null && target != null) {
+        final itemIndex = item.index;
+        final targetIndex = target.index;
+        
+        if (itemIndex != null && targetIndex != null) {
+          if (itemIndex < targetIndex) {
+            controller.reverse();
+          } else {
+            controller.forward();
+          }
         }
       }
     });
